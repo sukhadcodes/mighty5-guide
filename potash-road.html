@@ -13,7 +13,12 @@
   <header class="topbar">
     <div class="topbar-inner">
       <a class="brand" href="index.html"><span class="mark">&#9651;</span> Mighty 5 Field Guide</a>
-      <span class="offline-pill" id="offlinePill">Caching for offline…</span>
+      <div class="topbar-actions">
+        <span class="offline-pill" id="offlinePill">Caching for offline…</span>
+        <button class="refresh-btn" id="refreshBtn" type="button" title="Refresh content (ignores cache)" aria-label="Refresh content (ignores cache)">
+          <svg class="icon" viewBox="0 0 48 48"><path d="M40 24a16 16 0 1 1-4.7-11.3" /><path d="M40 8v10h-10" /></svg>
+        </button>
+      </div>
     </div>
     <nav class="parknav"><div class="parknav-inner">
       <a href="index.html" class="">Route</a>
@@ -23,6 +28,7 @@
       <a href="canyonlands.html" class="">Canyonlands</a>
       <a href="arches.html" class="">Arches</a>
       <a href="potash-road.html" class="active">Potash Road</a>
+      <a href="eat.html" class="">Eat</a>
     </div></nav>
   </header>
   <main class="wrap">

@@ -13,7 +13,12 @@
   <header class="topbar">
     <div class="topbar-inner">
       <a class="brand" href="index.html"><span class="mark">&#9651;</span> Mighty 5 Field Guide</a>
-      <span class="offline-pill" id="offlinePill">Caching for offline…</span>
+      <div class="topbar-actions">
+        <span class="offline-pill" id="offlinePill">Caching for offline…</span>
+        <button class="refresh-btn" id="refreshBtn" type="button" title="Refresh content (ignores cache)" aria-label="Refresh content (ignores cache)">
+          <svg class="icon" viewBox="0 0 48 48"><path d="M40 24a16 16 0 1 1-4.7-11.3" /><path d="M40 8v10h-10" /></svg>
+        </button>
+      </div>
     </div>
     <nav class="parknav"><div class="parknav-inner">
       <a href="index.html" class="active">Route</a>
@@ -23,6 +28,7 @@
       <a href="canyonlands.html" class="">Canyonlands</a>
       <a href="arches.html" class="">Arches</a>
       <a href="potash-road.html" class="">Potash Road</a>
+      <a href="eat.html" class="">Eat</a>
     </div></nav>
   </header>
   <main class="wrap">
@@ -77,6 +83,14 @@
         </a>
       </li>
     </ol>
+
+    <a class="eat-teaser" href="eat.html">
+      <div>
+        <h3>Where to eat</h3>
+        <p>Good, mostly non-touristy restaurants near Moab, Duck Creek Village, and Teasdale &amp; Torrey.</p>
+      </div>
+      <span class="eat-teaser-arrow">&rarr;</span>
+    </a>
 
     <section class="setup">
       <h2>Save this for offline use</h2>
