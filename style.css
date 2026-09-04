@@ -130,7 +130,58 @@ img,svg{display:block;max-width:100%;}
 .best-band .icon{color:var(--dusk);width:16px;height:16px;}
 .best-band b{font-weight:700;}
 
-/* ---------- spot list ---------- */
+/* ---------- time-of-day schedule ---------- */
+.tod{
+  margin:30px 0 8px;
+  border:1px solid var(--line);
+  background:var(--card);
+  border-radius:2px;
+  padding:20px 20px 8px;
+}
+.tod h2{
+  font-family:var(--serif);
+  font-size:1.25rem;
+  margin:0 0 4px;
+}
+.tod-lede{
+  margin:0 0 16px;
+  font-size:0.85rem;
+  color:var(--ink-soft);
+  max-width:56ch;
+}
+.tod-list{list-style:none;margin:0;padding:0;}
+.tod-row{
+  display:grid;
+  grid-template-columns:104px 1fr;
+  gap:14px;
+  padding:12px 0;
+  border-top:1px solid var(--line);
+}
+.tod-row:first-child{border-top:none;}
+.tod-time{
+  font-size:0.72rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.04em;
+  color:var(--dusk);
+  padding-top:2px;
+}
+.tod-body h4{
+  margin:0 0 3px;
+  font-family:var(--serif);
+  font-size:1rem;
+  font-weight:700;
+}
+.tod-body p{
+  margin:0;
+  font-size:0.85rem;
+  color:var(--ink-soft);
+}
+@media (max-width:480px){
+  .tod-row{grid-template-columns:1fr;gap:3px;}
+  .tod-time{padding-top:0;}
+}
+
 .spot-list{
   list-style:none;margin:28px 0 60px;padding:0;
   display:flex;flex-direction:column;gap:14px;
