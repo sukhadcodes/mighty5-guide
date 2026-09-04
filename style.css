@@ -1,0 +1,292 @@
+/* ============================================================
+   Utah Mighty 5 — trip field guide
+   A desert-survey / trail-sign aesthetic: warm sandstone paper,
+   rust ink, hand-set serif headings, tabular data rows.
+   ============================================================ */
+
+:root{
+  --sand:        #EFE4CC;
+  --sand-deep:   #E4D4AE;
+  --card:        #FBF6E9;
+  --ink:         #2B211C;
+  --ink-soft:    #5A4E42;
+  --rust:        #A8451D;
+  --rust-deep:   #7E3512;
+  --clay:        #C97A45;
+  --sage:        #62704E;
+  --dusk:        #35536B;
+  --line:        #D8C6A0;
+  --shadow:      rgba(43,33,28,0.16);
+  --radius-card: 2px;
+  --serif: ui-serif, Georgia, "Iowan Old Style", "Times New Roman", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  margin:0;
+  background:var(--sand);
+  background-image:
+    radial-gradient(ellipse at top left, rgba(255,255,255,0.35), transparent 55%),
+    repeating-linear-gradient(135deg, rgba(43,33,28,0.02) 0px, rgba(43,33,28,0.02) 1px, transparent 1px, transparent 5px);
+  color:var(--ink);
+  font-family:var(--sans);
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;}
+img,svg{display:block;max-width:100%;}
+.icon{width:1em;height:1em;display:inline-block;vertical-align:-0.15em;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+
+/* ---------- layout shell ---------- */
+.wrap{max-width:760px;margin:0 auto;padding:0 20px;}
+
+/* ---------- top bar ---------- */
+.topbar{
+  position:sticky;top:0;z-index:20;
+  background:var(--sand);
+  border-bottom:1px solid var(--line);
+}
+.topbar-inner{
+  max-width:760px;margin:0 auto;padding:14px 20px;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+}
+.brand{
+  font-family:var(--serif);
+  font-weight:700;
+  font-size:1.05rem;
+  letter-spacing:-0.01em;
+  text-decoration:none;
+  color:var(--ink);
+  display:flex;align-items:center;gap:8px;
+}
+.brand .mark{color:var(--rust);}
+.offline-pill{
+  font-size:0.68rem;
+  font-weight:600;
+  padding:4px 9px;
+  border-radius:20px;
+  border:1px solid var(--sage);
+  color:var(--sage);
+  white-space:nowrap;
+}
+.offline-pill.is-ready{background:var(--sage);color:var(--card);}
+
+/* ---------- horizontal park nav ---------- */
+.parknav{
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+  border-bottom:1px solid var(--line);
+  background:var(--sand-deep);
+}
+.parknav-inner{
+  max-width:760px;margin:0 auto;padding:0 20px;
+  display:flex;gap:2px;
+}
+.parknav a{
+  flex:0 0 auto;
+  padding:10px 14px;
+  font-size:0.82rem;
+  font-weight:600;
+  text-decoration:none;
+  color:var(--ink-soft);
+  border-bottom:3px solid transparent;
+  white-space:nowrap;
+}
+.parknav a.active{color:var(--rust);border-bottom-color:var(--rust);}
+
+/* ---------- hero ---------- */
+.hero{padding:36px 0 22px;}
+.hero-eyebrow{
+  font-size:0.78rem;
+  color:var(--ink-soft);
+  margin:0 0 6px;
+}
+.hero h1{
+  font-family:var(--serif);
+  font-size:2.4rem;
+  line-height:1.05;
+  letter-spacing:-0.01em;
+  margin:0 0 12px;
+  color:var(--ink);
+}
+.hero p.lede{
+  font-size:1.02rem;
+  color:var(--ink-soft);
+  max-width:56ch;
+  margin:0 0 18px;
+}
+.hero-icon{width:64px;height:64px;color:var(--rust);margin-bottom:14px;}
+
+.best-band{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--card);
+  border:1px solid var(--line);
+  padding:9px 14px;
+  border-radius:3px;
+  font-size:0.88rem;
+}
+.best-band .icon{color:var(--dusk);width:16px;height:16px;}
+.best-band b{font-weight:700;}
+
+/* ---------- spot list ---------- */
+.spot-list{
+  list-style:none;margin:28px 0 60px;padding:0;
+  display:flex;flex-direction:column;gap:14px;
+}
+.spot{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius-card);
+  padding:18px 18px 16px;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:14px 16px;
+  position:relative;
+  box-shadow:0 1px 0 var(--shadow);
+}
+.spot-rank{
+  font-family:var(--serif);
+  font-size:1.7rem;
+  color:var(--line);
+  line-height:1;
+  font-weight:700;
+  grid-row:1 / span 2;
+}
+.spot-top{
+  display:flex;align-items:flex-start;justify-content:space-between;gap:12px;
+}
+.spot-icon{
+  width:34px;height:34px;color:var(--rust);
+  flex:0 0 auto;
+}
+.spot h3{
+  font-family:var(--serif);
+  font-size:1.2rem;
+  margin:0 0 4px;
+  letter-spacing:-0.005em;
+}
+.spot-desc{
+  margin:0 0 12px;
+  color:var(--ink-soft);
+  font-size:0.92rem;
+  max-width:56ch;
+}
+.spot-stats{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:0;
+  margin:0 0 10px;
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:9px 0;
+}
+.spot-stats div{
+  display:flex;flex-direction:column;gap:2px;
+  padding-right:6px;
+}
+.spot-stats dt{
+  font-size:0.62rem;
+  text-transform:uppercase;
+  letter-spacing:0.04em;
+  color:var(--ink-soft);
+  margin:0;
+}
+.spot-stats dd{
+  margin:0;
+  font-size:0.86rem;
+  font-weight:600;
+}
+.spot-best{
+  display:flex;align-items:center;gap:6px;
+  margin:0;
+  font-size:0.84rem;
+  color:var(--dusk);
+}
+.spot-best .icon{width:14px;height:14px;flex:0 0 auto;}
+.diff{
+  display:inline-block;
+  padding:1px 7px;
+  border-radius:20px;
+  font-size:0.72rem;
+  font-weight:700;
+}
+.diff-easy{background:#E4EBD8;color:var(--sage);}
+.diff-moderate{background:#F3DFC2;color:var(--clay);}
+.diff-strenuous{background:#F0D6CB;color:var(--rust);}
+
+@media (max-width:520px){
+  .spot-stats{grid-template-columns:repeat(2,1fr);row-gap:8px;}
+  .hero h1{font-size:1.9rem;}
+}
+
+/* ---------- index page: route timeline ---------- */
+.route{list-style:none;margin:20px 0 40px;padding:0;position:relative;}
+.route::before{
+  content:"";position:absolute;left:19px;top:8px;bottom:8px;width:1px;
+  background:var(--line);
+}
+.route li{position:relative;padding:0 0 26px 52px;}
+.route li:last-child{padding-bottom:0;}
+.route-num{
+  position:absolute;left:0;top:0;
+  width:40px;height:40px;
+  border-radius:50%;
+  background:var(--card);
+  border:1px solid var(--rust);
+  color:var(--rust);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-weight:700;font-size:1rem;
+}
+.route a{
+  display:block;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:2px;
+  padding:14px 16px;
+  text-decoration:none;
+}
+.route a:hover{border-color:var(--rust);}
+.route h3{margin:0 0 3px;font-family:var(--serif);font-size:1.1rem;}
+.route p{margin:0;font-size:0.85rem;color:var(--ink-soft);}
+
+/* ---------- setup / install cards on index ---------- */
+.setup{
+  margin:44px 0;
+  border-top:1px solid var(--line);
+  padding-top:28px;
+}
+.setup h2{
+  font-family:var(--serif);
+  font-size:1.4rem;
+  margin:0 0 6px;
+}
+.setup > p{color:var(--ink-soft);font-size:0.92rem;margin:0 0 18px;max-width:56ch;}
+.setup-grid{display:flex;flex-direction:column;gap:10px;}
+.setup-card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:2px;
+  padding:14px 16px;
+  display:flex;gap:12px;align-items:flex-start;
+}
+.setup-card .num{
+  font-family:var(--serif);font-weight:700;color:var(--rust);
+  flex:0 0 auto;width:22px;
+}
+.setup-card p{margin:0;font-size:0.88rem;color:var(--ink-soft);}
+.setup-card strong{color:var(--ink);}
+code{
+  background:var(--sand-deep);
+  padding:1px 5px;
+  border-radius:3px;
+  font-size:0.86em;
+}
+
+footer{
+  border-top:1px solid var(--line);
+  padding:22px 0 44px;
+  font-size:0.8rem;
+  color:var(--ink-soft);
+}
