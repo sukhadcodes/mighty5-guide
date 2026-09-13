@@ -1,6 +1,6 @@
 // Cache-first service worker: precaches every page & asset on install
 // so the whole guide works with zero signal after the first visit.
-const CACHE = "mighty5-guide-v2";
+const CACHE = "mighty5-guide-v3";
 const ASSETS = [
   "app.js",
   "arches.html",
@@ -13,6 +13,7 @@ const ASSETS = [
   "manifest.json",
   "potash-road.html",
   "style.css",
+  "vegas.html",
   "zion.html"
 ];
 
